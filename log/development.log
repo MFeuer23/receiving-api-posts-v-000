@@ -6808,3 +6808,32 @@ Processing by PostsController#show as HTML
   [1m[36mPost Load (0.3ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 15]]
   [1m[35mCACHE (0.0ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", "15"]]
   Rendered posts/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 34ms (Views: 18.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/new" for 24.103.75.134 at 2018-11-14 16:15:01 +0000
+Cannot render console from 24.103.75.134! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 21ms (Views: 20.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 24.103.75.134 at 2018-11-14 16:15:07 +0000
+Cannot render console from 24.103.75.134! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8Lm50377l4YQrj2NOd58UMYL1BAB/TOzNoy/AfA2KAXVVrPATMYtzZn5VC4qebSWeolRgHULWGzaQtcnWh6W9w==", "post"=>{"title"=>"test", "description"=>"testss"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (6.1ms)[0m  INSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "test"], ["description", "testss"], ["created_at", "2018-11-14 16:15:07.467127"], ["updated_at", "2018-11-14 16:15:07.467127"]]
+  [1m[36m (6.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://67.205.130.239:34910/posts/16
+Completed 200 OK in 17ms (ActiveRecord: 12.4ms)
+
+
+Started GET "/posts/16" for 24.103.75.134 at 2018-11-14 16:15:07 +0000
+Cannot render console from 24.103.75.134! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 16]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", "16"]]
+  Rendered posts/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 25ms (Views: 17.1ms | ActiveRecord: 0.2ms)
