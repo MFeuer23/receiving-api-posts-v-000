@@ -6855,3 +6855,21 @@ Processing by PostsController#create as */*
   [1m[35m (2.8ms)[0m  commit transaction
 [active_model_serializers] Rendered PostSerializer with ActiveModelSerializers::Adapter::Attributes (0.42ms)
 Completed 201 Created in 52ms (Views: 40.9ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/posts/new" for 24.103.75.134 at 2018-11-14 16:20:49 +0000
+Cannot render console from 24.103.75.134! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 21ms (Views: 19.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 24.103.75.134 at 2018-11-14 16:20:52 +0000
+Cannot render console from 24.103.75.134! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"U1i8Q1mqpUyDh1B4HK9EoBsgv3eOK8sLw4qEP8l4V7V2t7ZQa5cfBwrQOdsPCIxmp6I65/rdoNQvROwZY1DpRw==", "post"=>{"title"=>"test", "description"=>"testss"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "test"], ["description", "testss"], ["created_at", "2018-11-14 16:20:52.631027"], ["updated_at", "2018-11-14 16:20:52.631027"]]
+  [1m[36m (2.7ms)[0m  [1mcommit transaction[0m
+[active_model_serializers] Rendered PostSerializer with ActiveModelSerializers::Adapter::Attributes (32.64ms)
+Completed 201 Created in 41ms (Views: 33.7ms | ActiveRecord: 3.3ms)
