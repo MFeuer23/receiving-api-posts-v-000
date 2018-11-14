@@ -6781,3 +6781,30 @@ Cannot render console from 24.103.75.134! Allowed networks: 127.0.0.1, ::1, 127.
 Processing by PostsController#new as HTML
   Rendered posts/new.html.erb within layouts/application (4.0ms)
 Completed 200 OK in 31ms (Views: 29.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 24.103.75.134 at 2018-11-14 16:14:20 +0000
+Cannot render console from 24.103.75.134! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 35ms (Views: 33.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 24.103.75.134 at 2018-11-14 16:14:24 +0000
+Cannot render console from 24.103.75.134! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nV253U2OiPOMGw+odY55kJ2TZiJ33z1XtyZbazSaM/u4srPOf7MyuAVMZgtmKbFWIRHjsgMpVohb6DNNnrKNCQ==", "post"=>{"title"=>"test", "description"=>"tests"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "test"], ["description", "tests"], ["created_at", "2018-11-14 16:14:24.149716"], ["updated_at", "2018-11-14 16:14:24.149716"]]
+  [1m[35m (3.1ms)[0m  commit transaction
+Redirected to http://67.205.130.239:34910/posts/15
+Completed 200 OK in 10ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/posts/15" for 24.103.75.134 at 2018-11-14 16:14:24 +0000
+Cannot render console from 24.103.75.134! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 15]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", "15"]]
+  Rendered posts/show.html.erb within layouts/application (0.8ms)
